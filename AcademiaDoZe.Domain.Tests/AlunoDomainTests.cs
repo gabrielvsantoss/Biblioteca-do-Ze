@@ -9,6 +9,7 @@ namespace AcademiaDoZe.Domain.Tests
         private Logradouro GetValidLogradouro() => Logradouro.Criar("12345678", "Rua A", "Centro", "Cidade", "SP", "Brasil");
         private Arquivo GetValidArquivo() => Arquivo.Criar(new byte[1], ".jpg");
         [Fact] 
+
         public void CriarAluno_ComDadosValidos_DeveCriarObjeto() // Padrão de Nomenclatura: MetodoTestado_Cenario_ResultadoEsperado
         {
             var nome = "João da Silva"; var cpf = "12345678901"; var dataNascimento = DateOnly.FromDateTime(DateTime.Today.AddYears(-20)); var telefone = "11999999999";
