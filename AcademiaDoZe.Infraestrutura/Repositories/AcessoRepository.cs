@@ -10,6 +10,8 @@ namespace AcademiaDoZe.Infrastructure.Repositories
 {
     public class AcessoRepository : BaseRepository<Acesso>, IAcessoRepository
     {
+        //Gabriel Velho dos Santos
+
         private readonly string _connectionString;
         private readonly DatabaseType _databaseType;
 

@@ -6,6 +6,8 @@ using System.Data.Common;
 
 namespace AcademiaDoZe.Infrastructure.Data
 {
+    //Gabriel Velho dos Santos  
+
     public enum DatabaseType { SqlServer, MySql }
 
     public static class DbProvider

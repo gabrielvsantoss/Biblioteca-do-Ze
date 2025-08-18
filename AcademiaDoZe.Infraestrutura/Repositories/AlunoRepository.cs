@@ -9,6 +9,8 @@ namespace AcademiaDoZe.Infrastructure.Repositories
 {
     public class AlunoRepository : BaseRepository<Aluno>, IAlunoRepository
     {
+        //Gabriel Velho dos Santos
+
         public AlunoRepository(string connectionString, DatabaseType databaseType)
             : base(connectionString, databaseType) { }
 

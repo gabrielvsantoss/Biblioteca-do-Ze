@@ -10,6 +10,8 @@ namespace AcademiaDoZe.Infrastructure.Repositories
 {
     public class ColaboradorRepository : BaseRepository<Colaborador>, IColaboradorRepository
     {
+        //Gabriel Velho dos Santos
+
         public ColaboradorRepository(string connectionString, DatabaseType databaseType)
             : base(connectionString, databaseType) { }
 

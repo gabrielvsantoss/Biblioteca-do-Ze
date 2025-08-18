@@ -8,6 +8,8 @@ namespace AcademiaDoZe.Infrastructure.Repositories
 {
     public class LogradouroRepository : BaseRepository<Logradouro>, ILogradouroRepository
     {
+        //Gabriel Velho dos Santos
+
         public LogradouroRepository(string connectionString, DatabaseType databaseType)
             : base(connectionString, databaseType) { }
 

@@ -6,6 +6,8 @@ using System.Data;
 using System.Data.Common;
 namespace AcademiaDoZe.Infrastructure.Repositories
 {
+    //Gabriel Velho dos Santos  
+
     public abstract class BaseRepository<TEntity> : IRepository<TEntity>, IAsyncDisposable where TEntity : Entity
     {
         protected readonly string _connectionString;
@@ -17,7 +19,6 @@ namespace AcademiaDoZe.Infrastructure.Repositories
             _connectionString = connectionString ?? throw new InfrastructureException("ERRO_STRING_CONEXAO" + nameof(connectionString));
             _databaseType = databaseType;
         }
-        // com base no nome da entidade, ajusta o nome da tabela e o nome da coluna id para o padrão do banco de dados
         protected virtual string TableName => $"tb_{typeof(TEntity).Name.ToLower()}";
         protected virtual string IdTableName => $"id_{typeof(TEntity).Name.ToLower()}";
         protected virtual async Task<DbConnection> GetOpenConnectionAsync()
@@ -54,7 +55,6 @@ namespace AcademiaDoZe.Infrastructure.Repositories
                 _disposed = true;
             }
         }
-        // Finalizador, destrutor, para garantir que os recursos sejam liberados - é chamado pelo Garbage Collector (GC) do .NET quando o objeto está sendo coletado.
         ~BaseRepository()
         {
             DisposeAsync(false).AsTask().GetAwaiter().GetResult();
