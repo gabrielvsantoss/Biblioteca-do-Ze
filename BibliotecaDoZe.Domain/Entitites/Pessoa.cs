@@ -1,23 +1,24 @@
-﻿using AcademiaDoZe.Domain.ValueObjects;
-namespace AcademiaDoZe.Domain.Entities
+﻿using AcademiaDoZe.Domain.Entities;
+using AcademiaDoZe.Domain.ValueObjects;
+
+public abstract class Pessoa : Entity
 {
-    public abstract class Pessoa : Entity
-    {
-        //Gabriel Velho dos Santos
+    public string Nome { get; protected set; } = string.Empty;
+    public string Cpf { get; protected set; } = string.Empty;
+    public DateOnly DataNascimento { get; protected set; }
+    public string Telefone { get; protected set; } = string.Empty;
+    public string Email { get; protected set; } = string.Empty;
+    public Logradouro Endereco { get; protected set; } = null!;
+    public string Numero { get; protected set; } = string.Empty;
+    public string Complemento { get; protected set; } = string.Empty;
+    public string Senha { get; protected set; } = string.Empty;
+    public Arquivo Foto { get; protected set; } = null!;
 
-        public string Nome { get; protected set; }
-        public string Cpf { get; protected set; }
-        public DateOnly DataNascimento { get; protected set; }
-        public string Telefone { get; protected set; }
-        public string Email { get; protected set; }
-        public Logradouro Endereco { get; protected set; }
-        public string Numero { get; protected set; }
-        public string Complemento { get; protected set; }
-        public string Senha { get; protected set; }
-        public Arquivo Foto { get; protected set; }
-        protected Pessoa(string nome,
+    protected Pessoa() { }
+
+    protected Pessoa(
+        string nome,
         string cpf,
-
         DateOnly dataNascimento,
         string telefone,
         string email,
@@ -25,19 +26,30 @@ namespace AcademiaDoZe.Domain.Entities
         string numero,
         string complemento,
         string senha,
-        Arquivo foto) : base()
-
-        {
-            Nome = nome;
-            Cpf = cpf;
-            DataNascimento = dataNascimento;
-            Telefone = telefone;
-            Email = email;
-            Endereco = endereco;
-            Numero = numero;
-            Complemento = complemento;
-            Senha = senha;
-            Foto = foto;
-        }
+        Arquivo foto
+    ) : base()
+    {
+        Nome = nome;
+        Cpf = cpf;
+        DataNascimento = dataNascimento;
+        Telefone = telefone;
+        Email = email;
+        Endereco = endereco;
+        Numero = numero;
+        Complemento = complemento;
+        Senha = senha;
+        Foto = foto;
     }
+
+    protected Pessoa(string cpf, string nome, string email)
+    {
+        ArgumentNullException.ThrowIfNull(cpf);
+        ArgumentNullException.ThrowIfNull(nome);
+        ArgumentNullException.ThrowIfNull(email);
+
+        Cpf = cpf;
+        Nome = nome;
+        Email = email;
+    }
+}
 }

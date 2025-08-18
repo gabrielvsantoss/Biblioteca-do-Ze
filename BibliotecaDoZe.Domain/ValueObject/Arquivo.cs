@@ -4,6 +4,8 @@ namespace AcademiaDoZe.Domain.ValueObjects
 {
     public record Arquivo
     {
+        private string v;
+
         //Gustavo Velho dos Santos
 
 
@@ -12,6 +14,12 @@ namespace AcademiaDoZe.Domain.ValueObjects
         {
             Conteudo = conteudo;
         }
+
+        public Arquivo(string v)
+        {
+            this.v = v;
+        }
+
         public static Arquivo Criar(byte[] conteudo, string tipoArquivo)
         {
             if (conteudo == null || conteudo.Length == 0)

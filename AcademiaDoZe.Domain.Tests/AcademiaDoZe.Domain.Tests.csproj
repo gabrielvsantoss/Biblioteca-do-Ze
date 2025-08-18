@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BibliotecaDoZe.Domain\BibliotecaDoZe.Domain.csproj" />
+    <ProjectReference Include="..\BibliotecaDoZe.Domain\AcademiaDoZe.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
